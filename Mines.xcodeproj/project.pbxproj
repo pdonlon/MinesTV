@@ -14,6 +14,8 @@
 		B6BBB6372BA0075800D49808 /* MinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BBB6362BA0075800D49808 /* MinesTests.swift */; };
 		B6BBB6412BA0075800D49808 /* MinesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BBB6402BA0075800D49808 /* MinesUITests.swift */; };
 		B6BBB6432BA0075800D49808 /* MinesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BBB6422BA0075800D49808 /* MinesUITestsLaunchTests.swift */; };
+		B6BBB6502BA00BFF00D49808 /* MinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BBB64F2BA00BFF00D49808 /* MinesView.swift */; };
+		B6BBB6522BA00C3400D49808 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BBB6512BA00C3400D49808 /* Cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		B6BBB63C2BA0075800D49808 /* MinesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BBB6402BA0075800D49808 /* MinesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinesUITests.swift; sourceTree = "<group>"; };
 		B6BBB6422BA0075800D49808 /* MinesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B6BBB64F2BA00BFF00D49808 /* MinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinesView.swift; sourceTree = "<group>"; };
+		B6BBB6512BA00C3400D49808 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			children = (
 				B6BBB6252BA0075700D49808 /* MinesApp.swift */,
 				B6BBB6272BA0075700D49808 /* ContentView.swift */,
+				B6BBB64F2BA00BFF00D49808 /* MinesView.swift */,
+				B6BBB6512BA00C3400D49808 /* Cell.swift */,
 				B6BBB6292BA0075800D49808 /* Assets.xcassets */,
 				B6BBB62B2BA0075800D49808 /* Preview Content */,
 			);
@@ -257,6 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BBB6522BA00C3400D49808 /* Cell.swift in Sources */,
+				B6BBB6502BA00BFF00D49808 /* MinesView.swift in Sources */,
 				B6BBB6282BA0075700D49808 /* ContentView.swift in Sources */,
 				B6BBB6262BA0075700D49808 /* MinesApp.swift in Sources */,
 			);
