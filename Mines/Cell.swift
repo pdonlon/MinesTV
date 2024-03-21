@@ -94,11 +94,13 @@ struct CellView: View {
 //                        .buttonBorderShape(.roundedRectangle)
                         .frame(width: size, height: size)
                         .clipShape(.rect)
+                    #if os(tvOS)
                     .onPlayPauseCommand {
                         cell.isFlagged.toggle()
                         print("FLAGGED")
                     }
                     .padding(0)
+                    #endif
                 }
             }
         }
