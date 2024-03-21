@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B64855A92BA16CC800C0FC2E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64855A82BA16CC800C0FC2E /* Utils.swift */; };
+		B663B0E62BA1296E00518550 /* BoardModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B663B0E52BA1296E00518550 /* BoardModelView.swift */; };
 		B6BBB6262BA0075700D49808 /* MinesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BBB6252BA0075700D49808 /* MinesApp.swift */; };
 		B6BBB6282BA0075700D49808 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BBB6272BA0075700D49808 /* ContentView.swift */; };
 		B6BBB62A2BA0075800D49808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6BBB6292BA0075800D49808 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B64855A82BA16CC800C0FC2E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		B663B0E52BA1296E00518550 /* BoardModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardModelView.swift; sourceTree = "<group>"; };
 		B6BBB6222BA0075700D49808 /* Mines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BBB6252BA0075700D49808 /* MinesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinesApp.swift; sourceTree = "<group>"; };
 		B6BBB6272BA0075700D49808 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				B6BBB6252BA0075700D49808 /* MinesApp.swift */,
+				B663B0E52BA1296E00518550 /* BoardModelView.swift */,
+				B64855A82BA16CC800C0FC2E /* Utils.swift */,
 				B6BBB6272BA0075700D49808 /* ContentView.swift */,
 				B6BBB64F2BA00BFF00D49808 /* MinesView.swift */,
 				B6BBB6512BA00C3400D49808 /* Cell.swift */,
@@ -263,10 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B663B0E62BA1296E00518550 /* BoardModelView.swift in Sources */,
 				B6BBB6522BA00C3400D49808 /* Cell.swift in Sources */,
 				B6BBB6502BA00BFF00D49808 /* MinesView.swift in Sources */,
 				B6BBB6282BA0075700D49808 /* ContentView.swift in Sources */,
 				B6BBB6262BA0075700D49808 /* MinesApp.swift in Sources */,
+				B64855A92BA16CC800C0FC2E /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,9 +449,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.durianapps.HeartRate.Mines;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
+				TARGETED_DEVICE_FAMILY = "1,3";
 			};
 			name = Debug;
 		};
@@ -466,9 +476,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.durianapps.HeartRate.Mines;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
+				TARGETED_DEVICE_FAMILY = "1,3";
 			};
 			name = Release;
 		};

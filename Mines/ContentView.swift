@@ -9,77 +9,64 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var board: [[Cell]] = []
-    
+    @StateObject var viewModel = BoardModelView()
+    @State private var showingGameOverPopup = false
     
     var body: some View {
-        VStack {
-            ForEach(board, id: \.self) { row in
-                HStack {
-                    ForEach(row, id: \.self) { cell in
-                        if cell.opened {
-                            Text("Bye")
-                                .frame(width: 100)
+        ZStack {
+            VStack(spacing: 0) {
+                EnumeratedForEach(viewModel.board)
+                { rowIdx, row in
+                    HStack(spacing: 0) {
+                        EnumeratedForEach(row) { colIdx, cell in
+                            CellView(onFlip:  {
+                                viewModel.openCell(x: rowIdx, y: colIdx)
+                            }, cell: cell)
                         }
-                        else
-                        {
-                            Button(action: {
-                                print("hi")
-                            }, label: {
-                                Text("Hi")
-                            })
-                            .frame(width: 100)
-                        }
-                        
                     }
                 }
-            }
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-        }
-        .padding()
-        .onAppear() {
-            let height = 10
-            let width = 10
-            
-            for _ in 0..<height {
-                var row: [Cell] = []
-                for _ in 0..<width {
-                    let cell = Cell()
-                    row.append(cell)
+            }
+            .disabled(showingGameOverPopup)
+            .padding()
+            .onAppear() {
+                viewModel.syncTiles(every: 0.01)
+            }
+            if showingGameOverPopup {
+                Rectangle()
+                    .fill(Color.black.opacity(0.4))
+                    .ignoresSafeArea() // This dims the background
+                
+                VStack {
+                    Text("Game Over")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .padding()
+                        .foregroundColor(.black)
+                    
+                    Button(action: {
+                        showingGameOverPopup = false
+                        viewModel.resetGame()
+                    }) {
+                        Text("Try Again?")
+                            .font(.title)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
                 }
-                board.append(row)
+                .frame(width: 500, height: 500)
+                .background(Color.white)
+                .cornerRadius(20)
+                .shadow(radius: 20)
             }
 
-            //mark some cells in the middle as opened for debugging
-            board[4][4].opened = true
-            board[4][5].opened = true
-            board[5][4].opened = true
-            board[5][5].opened = true
-
-        }
-    }
-    
-    mutating func startGame() {
-        makeBoard()
-    }
-    
-    mutating func makeBoard() {
-        
-        let height = 10
-        let width = 10
-        
-        for _ in 0..<height {
-            var row: [Cell] = []
-            for _ in 0..<width {
-                let cell = Cell()
-                row.append(cell)
+        }.onReceive(viewModel.$isGameOver) { isGameOver in
+            if isGameOver {
+                showingGameOverPopup = true
             }
-            board.append(row)
         }
     }
-}
-
-#Preview {
-    ContentView()
 }
